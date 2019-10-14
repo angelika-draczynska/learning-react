@@ -7,4 +7,10 @@
   padding: $base-size;
   margin: 0 0 $base-size 0;
   border-radius: $radius;
+  text-align: center;
+}
+
+.card {
+  position: relative;
+  text-align: center;
 }

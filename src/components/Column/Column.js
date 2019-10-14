@@ -8,7 +8,7 @@ import Icon from "../Icons/Icon.js";
 
 class Column extends React.Component {
   state = {
-    cards: this.props.cards || []
+    cards: this.props.cards || [],
   };
 
   static propTypes = {
@@ -23,18 +23,24 @@ class Column extends React.Component {
           key: state.cards.length
             ? state.cards[state.cards.length - 1].key + 1
             : 0,
-          title
+          title,
         }
       ]
     }));
-  }
+  };
+
+  handleDelete = itemId => {
+    const items = this.state.cards.filter(card => card.key !== itemId);
+    console.log(items);
+    this.setState({ cards: items });
+  };
 
   render() {
     return (
       <section className={styles.component}>
         <h3 className={styles.title}><span className={styles.icon}><Icon name={this.props.icon} /></span>{this.props.title}</h3>
         {this.state.cards.map(({ key, ...cardsProps }) => (
-          <Card key={key} {...cardsProps} />
+          <Card delete={this.handleDelete} id={this.key} key={key} {...cardsProps} />
         ))}
         <div className={styles.creator}>
           <Creator
@@ -44,7 +50,8 @@ class Column extends React.Component {
         </div>
       </section>
     );
-  }
 }
+}
+
 
 export default Column;
