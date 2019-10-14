@@ -31,7 +31,6 @@ class Column extends React.Component {
 
   handleDelete = itemId => {
     const items = this.state.cards.filter(card => card.key !== itemId);
-    console.log(items);
     this.setState({ cards: items });
   };
 
@@ -40,7 +39,7 @@ class Column extends React.Component {
       <section className={styles.component}>
         <h3 className={styles.title}><span className={styles.icon}><Icon name={this.props.icon} /></span>{this.props.title}</h3>
         {this.state.cards.map(({ key, ...cardsProps }) => (
-          <Card delete={this.handleDelete} id={this.key} key={key} {...cardsProps} />
+          <Card delete={this.handleDelete} id={key} key={key} {...cardsProps} />
         ))}
         <div className={styles.creator}>
           <Creator
