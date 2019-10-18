@@ -7,9 +7,9 @@ import { settings } from '../../data/dataStore';
 import Icon from '../Icons/Icon.js';
 
 class Column extends React.Component {
-  state = {
-    cards: this.props.cards || [],
-  };
+  // state = {
+  //   cards: this.props.cards || [],
+  // };
 
   static propTypes = {
     titleText: PropTypes.node,
@@ -38,6 +38,7 @@ class Column extends React.Component {
   };
 
   render() {
+    console.log('...', this.props);
     return (
       <section className={styles.component}>
         <h3 className={styles.title}>
@@ -52,7 +53,7 @@ class Column extends React.Component {
         <div className={styles.creator}>
           <Creator
             text={settings.cardCreatorText}
-            action={title => this.addCard(title)}
+            // action={title => this.props.add(title, this.props.id)}
           />
         </div>
       </section>
