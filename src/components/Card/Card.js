@@ -11,10 +11,10 @@ class Card extends React.Component {
   };
   
   render() {
-    console.log('this.props', this.props);
+    const { title } = this.props;
     return (
       <div className={styles.card}>
-        <h2 className={styles.component}>{this.props.title}</h2>
+        <h2 className={styles.component}>{title}</h2>
         <button
           className={styles.button}
           onClick={() => {

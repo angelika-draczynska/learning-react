@@ -1,5 +1,3 @@
-import uuid from 'react-uuid';
-
 export const settings = {
   columnCreatorText: 'Add new column',
   cardCreatorText: 'Add new card',
@@ -27,46 +25,46 @@ export const listData = {
   image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   columns: [
     {
-      id: uuid(),
+      key: 0,
       title: 'Books',
       icon: 'book',
       cards: [
         {
-          id: uuid(),
+          key: 0,
           title: 'This Is Going to Hurt',
         },
         {
-          id: uuid(),
+          key: 1,
           title: 'Interpreter of Maladies',
         },
       ],
     },
     {
-      id: uuid(),
+      key: 1,
       title: 'Movies',
       icon: 'film',
       cards: [
         {
-          id: uuid(),
+          key: 0,
           title: 'Harry Potter',
         },
         {
-          id: uuid(),
+          key: 1,
           title: 'Star Wars',
         },
       ],
     },
     {
-      id: uuid(),
+      key: 2,
       title: 'Games',
       icon: 'gamepad',
       cards: [
         {
-          id: uuid(),
+          key: 0,
           title: 'The Witcher',
         },
         {
-          id: uuid(),
+          key: 1,
           title: 'Skyrim',
         },
       ],
