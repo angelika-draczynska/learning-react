@@ -1,10 +1,10 @@
-import React from "react";
-import styles from "./Column.scss";
-import PropTypes from "prop-types";
-import Creator from "../Creator/Creator.js";
-import Card from "../Card/Card.js";
-import { settings } from "../../data/dataStore";
-import Icon from "../Icons/Icon.js";
+import React from 'react';
+import styles from './Column.scss';
+import PropTypes from 'prop-types';
+import Creator from '../Creator/Creator.js';
+import Card from '../Card/Card.js';
+import { settings } from '../../data/dataStore';
+import Icon from '../Icons/Icon.js';
 
 class Column extends React.Component {
   state = {
@@ -12,7 +12,10 @@ class Column extends React.Component {
   };
 
   static propTypes = {
-    titleText: PropTypes.node
+    titleText: PropTypes.node,
+    icon: PropTypes.node,
+    cards: PropTypes.node,
+    title: PropTypes.string,
   };
 
   addCard(title) {
@@ -24,10 +27,10 @@ class Column extends React.Component {
             ? state.cards[state.cards.length - 1].key + 1
             : 0,
           title,
-        }
-      ]
+        },
+      ],
     }));
-  };
+  }
 
   handleDelete = itemId => {
     const items = this.state.cards.filter(card => card.key !== itemId);
@@ -37,7 +40,12 @@ class Column extends React.Component {
   render() {
     return (
       <section className={styles.component}>
-        <h3 className={styles.title}><span className={styles.icon}><Icon name={this.props.icon} /></span>{this.props.title}</h3>
+        <h3 className={styles.title}>
+          <span className={styles.icon}>
+            <Icon name={this.props.icon} />
+          </span>
+          {this.props.title}
+        </h3>
         {this.state.cards.map(({ key, ...cardsProps }) => (
           <Card delete={this.handleDelete} id={key} key={key} {...cardsProps} />
         ))}
@@ -49,8 +57,7 @@ class Column extends React.Component {
         </div>
       </section>
     );
+  }
 }
-}
-
 
 export default Column;
