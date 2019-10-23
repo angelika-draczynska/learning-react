@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
 import Icon from '../Icons/Icon';
+import Container from '../Container/Container';
 
 class Search extends React.Component {
   static propTypes = {
@@ -45,6 +46,7 @@ class Search extends React.Component {
     const {icon} = settings.search;
     return (
       <div className={styles.component}>
+        <Container />
         <input
           type='text'
           placeholder={text}
