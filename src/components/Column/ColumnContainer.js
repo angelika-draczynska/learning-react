@@ -12,9 +12,8 @@ const mapDispatchToProps = (dispatch, props) => ({
     columnId: props.id,
     title,
   })),
-  deleteCard: title => dispatch(createAction_deleteCard({
-    columnId: props.id,
-    title,
+  deleteCard: cardId => dispatch(createAction_deleteCard({
+    cardId,
   })),
 });
 

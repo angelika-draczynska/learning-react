@@ -28,7 +28,8 @@ export default function reducer(state = [], action = {}) {
     case ADD_CARD:
       return [...state, { ...action.payload, id: shortid.generate() }];
     case DELETE_CARD:
-      return state.filter(({ id }) => id !== action.payload);
+      
+      return state.filter((card) => card.id !== action.payload.cardId);
     default:
       return state;
   }

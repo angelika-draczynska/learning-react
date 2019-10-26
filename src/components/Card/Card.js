@@ -8,18 +8,18 @@ class Card extends React.Component {
     id: PropTypes.node,
     delete: PropTypes.func,
     title: PropTypes.string,
+    action: PropTypes.func,
   };
   
   render() {
     const { title } = this.props;
-    console.log(this.props);
     return (
       <div className={styles.card}>
         <h2 className={styles.component}>{title}</h2>
         <button
           className={styles.button}
           onClick={() => {
-            this.props.delete(this.props.id);
+            this.props.action(this.props.id);
           }}
         >
           Delete
