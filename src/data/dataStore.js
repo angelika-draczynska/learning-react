@@ -6,6 +6,7 @@ export const settings = {
     buttonCancel: 'Cancel',
     defaultText: 'Add new item',
   },
+  navigationIcon: 'smile-beam',
   search: {
     defaultText: 'Search...',
     icon: 'search',
@@ -17,6 +18,17 @@ export const settings = {
 export const pageContents = {
   title: 'My first React app',
   subtitle: 'A simple to-do app, with lists, columns and cards',
+};
+
+export const faqContent = {
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  title: 'FAQ',
+  content: 'Czarek Pucharek',
+};
+export const infoContent = {
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  title: 'Info',
+  content: 'Lorem ipsum dolor sit amet. ',
 };
 
 export const listData = {

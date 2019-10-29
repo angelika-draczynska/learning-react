@@ -20,11 +20,6 @@ class Column extends React.Component {
     addCard: PropTypes.func,
   };
 
-  handleDelete = itemId => {
-    const items = this.state.cards.filter(card => card.key !== itemId);
-    this.setState({ cards: items });
-  };
-
   render() {
     const { title, icon, cards, addCard } = this.props;
     return (
