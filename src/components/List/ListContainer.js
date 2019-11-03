@@ -5,8 +5,7 @@ import { getColumnsForList, createAction_addColumn} from '../../redux/columnsRed
 
 const mapStateToProps = (state, props) => {
   const id = props.match.params.id;
-  const listParams = state.lists.find(list => list.id);
-
+  const listParams = state.lists.find(list => list.id == id);
   return {
     ...listParams,
     columns: getColumnsForList(state, id),

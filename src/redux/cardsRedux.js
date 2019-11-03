@@ -7,8 +7,7 @@ export const getCardsForSearch = ({cards, columns}, searchString) => {
   cards.filter(card => new RegExp(searchString, 'i').test(card.title));
 
   return cards.map(card => {
-    const listSelector = columns.find(column => column).listId;
-
+    const listSelector = columns.find(column => card.columnId == column.id).listId;
     return {
       ...card,
       listId: listSelector,
