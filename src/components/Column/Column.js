@@ -18,10 +18,11 @@ class Column extends React.Component {
     cards: PropTypes.array,
     title: PropTypes.string,
     addCard: PropTypes.func,
+    deleteCard: PropTypes.func,
   };
 
   render() {
-    const { title, icon, cards, addCard } = this.props;
+    const { title, icon, cards, addCard, deleteCard } = this.props;
     return (
       <section className={styles.component}>
         <h3 className={styles.title}>
@@ -31,7 +32,7 @@ class Column extends React.Component {
           {title}
         </h3>
         {cards.map(cardData => (
-          <Card key={cardData.id} {...cardData} delete={this.handleDelete}/>
+          <Card key={cardData.id} {...cardData} action={deleteCard} id={cardData.id}/>
         ))}
         <div className={styles.creator}>
           <Creator

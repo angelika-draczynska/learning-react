@@ -8,6 +8,7 @@ class Card extends React.Component {
     id: PropTypes.node,
     delete: PropTypes.func,
     title: PropTypes.string,
+    action: PropTypes.func,
   };
   
   render() {
@@ -18,7 +19,7 @@ class Card extends React.Component {
         <button
           className={styles.button}
           onClick={() => {
-            this.props.delete(this.props.id);
+            this.props.action(this.props.id);
           }}
         >
           Delete
